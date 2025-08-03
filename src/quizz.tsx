@@ -26,10 +26,6 @@ type TestStat = {
   timesTaken: number;
 };
 
-type StatChartData = {
-  name: string;
-  value: number;
-};
 
 function getRandomSubset<T>(array: T[], count: number): T[] {
   const shuffled = [...array].sort(() => 0.5 - Math.random());
@@ -296,13 +292,7 @@ export default function QuizApp() {
   }
 
   if (quizData.length === 0) {
-    const statCharts: StatChartData[] = Object.entries(groupStats).map(([idx, stat]) => {
-      const correctRatio = stat.attempted ? (stat.correct / stat.attempted) : 0;
-      return {
-        name: `To'plam ${+idx + 1}`,
-        value: correctRatio,
-      };
-    });
+
 
     return (
       <div className="p-4 max-w-5xl mx-auto">
