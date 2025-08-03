@@ -96,7 +96,7 @@ export default function QuizApp() {
 
   // Load questions
   useEffect(() => {
-    fetch("../data/intalim.json")
+    fetch("/data/intalim.json")
       .then((res) => res.json())
       .then((data) => {
         const questions: Question[] = data.data.data;
